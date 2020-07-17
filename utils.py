@@ -1,0 +1,1 @@
+import timeimport pymysqldef get_time():    time_str = time.strftime('%Y{}%m{}%d{} %X').format('年','月','日')    return time_strif __name__ == '__main__':    print(get_time())
