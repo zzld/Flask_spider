@@ -1,51 +1,1 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>疫情监控</title>
-		<script src="../static/js/jquery-3.5.1.min.js"></script>
-		<link href="../static/css/main.css" rel="stylesheet"/>
-		<style>
-			
-		</style>
-	</head>
-	<body>
-		<div id="title">我是标题</div>
-		<div id="tim">时间</div>
-		<div id="l1">我是左1</div>
-		<div id="l2">我是左2</div>
-		<div id="c1">
-			<div class="num"><h1>123</h1></div>
-			<div class="num"><h1>123</h1></div>
-			<div class="num"><h1>123</h1></div>
-			<div class="num"><h1>123</h1></div>
-			<div class="txt"><h2>累计确诊</h2></div>
-			<div class="txt"><h2>剩余疑似</h2></div>
-			<div class="txt"><h2>累计治愈</h2></div>
-			<div class="txt"><h2>累计死亡</h2></div>
-		</div>
-		<div id="c2">我是中2</div>
-		<div id="r1">我是右1</div>
-		<div id="r2">我是右2</div>
-	<script>
-		function gettime(){
-			$.ajax({
-				url:"/time",
-				// data:{
-					
-				// },
-				// dataType:'json',
-				// type:'post',
-				timeout:10000,
-				success:function(data){
-					$("#tim").html(data)
-				},
-				error:function(xhr,type,errorThrown){
-					
-				}
-			});
-		}
-		setInterval(gettime,10)
-	</script>	
-	</body>
-</html>
+<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <title>球员数据</title></head><body>    <h1>欢迎你：{{ aaa }}</h1>    <a href="/logout">退出</a>    <a href="/main/detial">详情</a>    <a href="/eggprice">查询蛋价</a>    <h2>球员数据排行</h2>    <table class="table table-bordered">    <tr>        <th>姓名</th>        <th>球队</th>        <th>得分</th>    </tr>        {% for i in data %}            <tr>                <td>{{ i[0] }}</td>                <td>{{ i[1] }}</td>                <td>{{ i[2] }}</td>            </tr>        {% endfor %}    </table></body></html>
